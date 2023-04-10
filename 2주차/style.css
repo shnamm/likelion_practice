@@ -1,0 +1,11 @@
+header{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+}
+
+#main{
+    background-image: url('KakaoTalk_20230406_190721287_03.png');
+    height: 700px
+}
