@@ -15,22 +15,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
-from django.conf import settings
-from django.conf.urls.static import static
-from lotto.views import lotto_index, lottoGenerator
-from posts.views import url_view, url_parameter_view, function_view, class_view, index
+from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('lotto/', lotto_index),
-    path('lotto/result/', lottoGenerator),
-    path('url/', url_view),
-    path('url/<str:username>/', url_parameter_view),
-    path('fbv/', function_view),
-    path('cbv/', class_view.as_view()),
-    path('', index, name='index'),
-    path('posts/', include('posts.urls', namespace='posts')),
 ]
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
